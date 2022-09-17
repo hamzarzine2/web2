@@ -1,5 +1,5 @@
 const dateTimeNow=new Date()
-let message="tuturu"
+let message="This is the best moment to have a look at this website !"
 
 console.log(dateTimeNow.toLocaleDateString());
 
