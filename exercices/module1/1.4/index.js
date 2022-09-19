@@ -1,24 +1,40 @@
-const red= document.getElementById("red")
-const orange=document.getElementById("orange")
-const green=document.getElementById("green")
-let div=document.querySelectorAll("div")
+const red = document.getElementById("red");
+const orange = document.getElementById("orange");
+const green = document.getElementById("green");
+let div = document.querySelectorAll("div");
+let i = 0;
 
-changeColor()
+changeColor();
+setTimeout(changeColor, 10000);
 
-function changeColor () {   
-    changeColorRed();
-    setTimeout(changeColorOrange,2000);
-    setTimeout(changeColorGreen,4000);
+function changeColor() {
+  changeColorRed();
+  setTimeout(changeColorRedOrange, 2000);
+  setTimeout(changeColorOrangeGreen, 4000);
+  setTimeout(changeColorGreenOrange, 6000);
+  setTimeout(changeColorOrangeRed, 8000);
 }
 
-function changeColorRed () {
-    red.style.backgroundColor='red'    
+function changeColorRed() {
+  red.style.backgroundColor = "red";
 }
 
-function changeColorOrange () {
-    orange.style.backgroundColor='orange'    
+function changeColorRedOrange() {
+  red.style.backgroundColor = "";
+  orange.style.backgroundColor = "orange";
 }
- 
-function changeColorGreen () {
-    green.style.backgroundColor='green'    
+
+function changeColorOrangeGreen() {
+  orange.style.backgroundColor = "";
+  green.style.backgroundColor = "green";
+}
+
+function changeColorGreenOrange() {
+  orange.style.backgroundColor = "orange";
+  green.style.backgroundColor = "";
+}
+
+function changeColorOrangeRed() {
+  orange.style.backgroundColor = "";
+  red.style.backgroundColor = "red";
 }
