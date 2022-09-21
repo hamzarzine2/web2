@@ -4,15 +4,23 @@ const green = document.getElementById("green");
 let div = document.querySelectorAll("div");
 let i = 0;
 
+boucle();
+
+function boucle (){
+  setInterval(changeColor,4000)
+}
+
+
+
+
 changeColor();
-setTimeout(changeColor, 10000);
 
 function changeColor() {
   changeColorRed();
-  setTimeout(changeColorRedOrange, 2000);
-  setTimeout(changeColorOrangeGreen, 4000);
-  setTimeout(changeColorGreenOrange, 6000);
-  setTimeout(changeColorOrangeRed, 8000);
+  setTimeout(changeColorRedOrange, 1000);
+  setTimeout(changeColorOrangeGreen, 2000);
+  setTimeout(changeColorGreenOrange, 3000);
+  setTimeout(changeColorOrangeRed, 4000);
 }
 
 function changeColorRed() {
