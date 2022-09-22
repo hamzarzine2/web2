@@ -2,6 +2,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/main.css';
 import 'animate.css';
 
+import pizzaImage from './img/pizza2.jpg'
+
+renderPizzaImage(pizzaImage);
+
+function renderPizzaImage(pizzaUrl) {
+  const image = new Image(); // or document.createElement('img');
+  image.src = pizzaUrl;
+  image.height = 50;
+  const footer = document.querySelector('footer');
+  footer.appendChild(image);
+}
 const MENU = [
   {
     id: 1,
@@ -118,6 +129,12 @@ function attachOnMouseEventsToGoGreen() {
   });
 }
 
+const mainWrapper = document.querySelector('main');
+const figcaption = document.createElement('figcaption');
+figcaption.innerText = 'Our drinks';
+figcaption.className = 'text-light text-decoration-underline';
+mainWrapper.appendChild(figcaption);
+
 function renderDrinksFromNodes(drinks) {
   const drinksTableAsNode = getDrinksTableAsNode(drinks);
 
@@ -153,6 +170,14 @@ function getDrinksTableAsNode(drinks) {
     line.appendChild(title);
     line.appendChild(description);
     tbody.appendChild(line);
+  });
+  
+  table.addEventListener('mouseover', () => {
+    table.className = 'table table-danger';
+  });
+
+  table.addEventListener('mouseout', () => {
+    table.className = 'table table-success';
   });
 
   return tableWrapper;
