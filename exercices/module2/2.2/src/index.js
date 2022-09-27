@@ -12,8 +12,8 @@ renderImage(imageFilm2);
 
 function renderImage (imageUrl) {
     const divisionImage=document.createElement('div');
-    const image=document.createElement('img')
+    const image=document.createElement('img');
     image.src=imageUrl;
-    main.appendChild(divisionImage)
-    divisionImage.appendChild(image)
+    main.appendChild(divisionImage);
+    divisionImage.appendChild(image);
 }
