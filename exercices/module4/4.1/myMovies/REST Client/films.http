@@ -1,0 +1,10 @@
+@linkbase = http://localhost:3000
+
+###render all films
+GET {{linkbase}}/films
+
+###render all films with filter duration minma
+GET {{linkbase}}/films?minimum-duration= 300
+
+###render film by id
+GET {{linkbase}}/films/3
