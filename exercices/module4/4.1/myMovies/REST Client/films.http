@@ -8,3 +8,27 @@ GET {{linkbase}}/films?minimum-duration= 300
 
 ###render film by id
 GET {{linkbase}}/films/3
+
+### add a film 
+POST {{linkbase}}/films
+Content-Type: application/json
+
+{
+    "title":"one piece gold",
+    "duration":"332",
+    "budget":"32",
+    "link":"https://e-vinci.github.io/web2/modules/4#c3" 
+}
+
+### delete un element 
+ DELETE {{linkbase}}/films/3
+
+###uptade a movies
+PATCH  {{linkbase}}/films/1
+Content-Type: application/json
+
+{
+    "title":"one piece red 23",
+    "duration":"332",
+    "budget":"32"
+}
