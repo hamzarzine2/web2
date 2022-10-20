@@ -24,7 +24,7 @@ Content-Type: application/json
  DELETE {{linkbase}}/films/3
 
 ###uptade a movies
-PATCH  {{linkbase}}/films/1
+PUT   {{linkbase}}/films/1
 Content-Type: application/json
 
 {
