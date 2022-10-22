@@ -1,0 +1,34 @@
+@linkbase = http://localhost:3000
+
+###render all films
+GET {{linkbase}}/films
+
+###render all films with filter duration minma
+GET {{linkbase}}/films?minimum-duration=300
+
+###render film by id
+GET {{linkbase}}/films/3
+
+### add a film 
+POST {{linkbase}}/films
+Content-Type: application/json
+
+{
+    "title":"one piece gold",
+    "duration":"332",
+    "budget":"32",
+    "link":"https://e-vinci.github.io/web2/modules/4#c3" 
+}
+
+### delete un element 
+DELETE {{linkbase}}/films/6
+
+###uptade a movies
+PATCH    {{linkbase}}/films/11
+Content-Type: application/json
+
+{
+    "title":"one piece red 23",
+    "duration":"332",
+    "budget":"32"
+}
