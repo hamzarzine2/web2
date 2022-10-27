@@ -11,9 +11,9 @@ const renderViewPage = async () => {
     const response = await fetch('/api/films');
     if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
     const filmJson = await response.json();
-    console.log(filmJson);
     renderTable(filmJson);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 };
@@ -26,7 +26,6 @@ function renderTable(film) {
   divTable.innerHTML += table;
   // eslint-disable-next-line no-restricted-syntax
   for (const item of film) {
-    console.log(`deleteForm-${item.id}`);
     const formDelete=document.getElementById(`deleteForm-${item.id}`)
     formDelete.addEventListener('submit', deleteId)
     const formUpdate=document.getElementById(`updateForm-${item.id}`)
@@ -89,10 +88,10 @@ async function deleteId(e){
     }
     const response= await fetch(`api/films/${idFilm}`,options);
 
-    const suppFilm=await response.json();
-    console.log(suppFilm);
+    await response.json();
     renderViewPage();
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 }
@@ -130,6 +129,7 @@ async function updateRow(e){
     await response.json();
     renderViewPage();
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 
