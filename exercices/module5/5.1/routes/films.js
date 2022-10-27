@@ -21,7 +21,7 @@ const film = [
     duration: 223,
     budget: 323,
     link: 'https://e-vinci.github.io/web2/modules/4#c3',
-  },
+  }, 
   {
     id: 3,
     title: 'jujutsu kaisen 0',

@@ -63,9 +63,15 @@ function getFilmID(id){
 
 function addFilm(title,duration,budget,link){
     if (!title || !duration || !budget || !link) return undefined;
-    const filmJson= parse(jsonDbPath,film)
-
-  const idAdd = filmJson.length + 1;
+  const filmJson= parse(jsonDbPath,film)
+  const key=filmJson.length-1
+  console.log(key)
+  console.log(filmJson.at(key))
+  const idLast = filmJson.at(key).id;
+  console.log(idLast)
+  let idAdd=parseInt(idLast,10);
+  idAdd+=1;
+  console.log(idAdd)
 
   const itemAdd = {
     id: idAdd,
@@ -83,7 +89,8 @@ function addFilm(title,duration,budget,link){
 
 function deleteFilm (idFilm) {
     const filmJson = parse(jsonDbPath,film)
-    if (idFilm< 0 || idFilm > filmJson.length) return undefined;
+    
+    if (idFilm< 0 ) return undefined;
     const filmID = filmJson.findIndex((e) => e.id === idFilm);
     const filmSupp = filmJson[filmID]; 
 
@@ -95,7 +102,7 @@ function deleteFilm (idFilm) {
 
 function updateFilm (id,propretyToUpdate){
     const filmJson = parse(jsonDbPath,film)
-    if (id < 0 || id > filmJson.length) return undefined;
+    if (id < 0) return undefined;
 
     
 
@@ -105,7 +112,7 @@ function updateFilm (id,propretyToUpdate){
 
     filmJson[filmID] = filmUptad;
     serialize(jsonDbPath,filmJson)
-
+    console.log("test")
     return filmUptad;
 }
 

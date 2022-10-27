@@ -14,21 +14,23 @@ POST {{linkbase}}/films
 Content-Type: application/json
 
 {
-    "title":"one piece gold",
+    "title":"one piece 887",
     "duration":"332",
     "budget":"32",
     "link":"https://e-vinci.github.io/web2/modules/4#c3" 
 }
 
 ### delete un element 
-DELETE {{linkbase}}/films/6
+DELETE {{linkbase}}/films/8
 
 ###uptade a movies
-PATCH    {{linkbase}}/films/11
+PATCH  {{linkbase}}/films/7
 Content-Type: application/json
 
 {
-    "title":"one piece red 23",
+    "title":"one piece red 12333",
     "duration":"332",
-    "budget":"32"
+    "budget":"32",
+    "link":"bobn"
 }
+

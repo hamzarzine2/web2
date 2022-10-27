@@ -52,7 +52,7 @@ router.patch('/:id', (req, res) => {
   const duree = req?.body?.duration;
   const budget = req?.body?.budget;
   const lien = req?.body?.link;
-
+  console.log("bob l'eponge")
   const idValue=parseInt(req.params.id,10)
 
   const filmUptad=updateFilm(idValue,req.body)
@@ -64,9 +64,10 @@ router.patch('/:id', (req, res) => {
     lien?.length === 0
   )
     return res.sendStatus(400);
+  console.log(filmUptad)
 
 
-  return filmUptad;
+  return res.json(filmUptad);
 });
 
 module.exports = router;

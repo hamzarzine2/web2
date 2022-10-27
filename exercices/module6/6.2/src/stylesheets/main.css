@@ -1,0 +1,16 @@
+.imageDiv{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    margin: 15px;
+}
+
+.container{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+}
