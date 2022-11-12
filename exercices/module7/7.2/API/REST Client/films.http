@@ -1,0 +1,79 @@
+@linkbase = http://localhost:3000
+
+###login of an user 
+# @name user
+POST {{linkbase}}/auths/login
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+###render all films
+GET {{linkbase}}/films
+
+###render all films with filter duration minma
+GET {{linkbase}}/films?minimum-duration=300
+
+###render film by id
+GET {{linkbase}}/films/3
+
+### add a film 
+POST {{linkbase}}/films
+Content-Type: application/json
+Authorization: {{user.response.body.token}}
+
+{
+    "title":"one piece 887",
+    "duration":"332",
+    "budget":"32",
+    "link":"https://e-vinci.github.io/web2/modules/4#c3" 
+}
+
+### delete un element 
+DELETE {{linkbase}}/films/10
+Authorization: {{user.response.body.token}}
+
+
+###uptade a movies
+PATCH  {{linkbase}}/films/7
+Content-Type: application/json
+Authorization: {{user.response.body.token}}
+
+
+{
+    "title":"one piece red 12333",
+    "duration":"332",
+    "budget":"32",
+    "link":"bobn"
+}
+
+########### without autorisation 
+
+###uptade a movies
+PATCH  {{linkbase}}/films/7
+Content-Type: application/json
+
+
+{
+    "title":"one piece red 12333",
+    "duration":"332",
+    "budget":"32",
+    "link":"bobn"
+}
+
+
+### delete un element 
+DELETE {{linkbase}}/films/8
+
+### add a film 
+POST {{linkbase}}/films
+Content-Type: application/json
+
+{
+    "title":"one piece 887",
+    "duration":"332",
+    "budget":"32",
+    "link":"https://e-vinci.github.io/web2/modules/4#c3" 
+}
