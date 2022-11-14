@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:3000
+
+
+###register of a user
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+    "username":"user1",
+    "password":"user1"
+}
+
+###register of a user
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+    "username":"user2",
+    "password":"user2"
+}
+
+###login
+POST  {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+###login of a user
+POST  {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username":"user2",
+    "password":"user2"
+}
+
+### Logout any user
+GET {{baseUrl}}/auths/logout
+
